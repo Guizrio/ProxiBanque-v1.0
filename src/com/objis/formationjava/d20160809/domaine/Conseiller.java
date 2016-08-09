@@ -1,6 +1,6 @@
 package com.objis.formationjava.d20160809.domaine;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Stagiaire on 09/08/2016.
@@ -8,17 +8,21 @@ import java.util.List;
 public class Conseiller extends Contact {
 
     private String prenom;
-    private List<Client> clients;
+    private Set<Client> clients;
 
     public String getPrenom(){
         return prenom;
     }
 
-    public List<Client> getClients() {
+    public Set<Client> getClients() {
         return clients;
     }
 
     public boolean addClient(Client client){
         return clients.add(client);
+    }
+
+    public boolean removeClient(Client client){
+        return clients.remove(client);
     }
 }

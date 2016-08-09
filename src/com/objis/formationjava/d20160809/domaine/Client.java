@@ -9,6 +9,7 @@ public abstract class Client extends Contact {
 
 	List<CompteBanquaire> listeCompteBanquaires;
 	List<CarteBanquaire> listeCarteBanquaires;
+	List<Placement> placements;
 	Conseiller conseiller;
 	
 	
