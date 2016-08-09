@@ -1,5 +1,6 @@
 package com.objis.formationjava.d20160809.domaine;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,14 +8,46 @@ import java.util.List;
  */
 public abstract class Client extends Contact implements Idebiteur {
 
-    List<CompteBanquaire> listeCompteBanquaires;
-    List<CarteBanquaire> CarteBanquaires;
-    List<Placement> placements;
+    private List<CompteBanquaire> listeCompteBanquaires;
+    private List<CarteBanquaire> carteBanquaires;
+    private List<Placement> placements;
+
+
+
+    public Client(String nom) {
+        super(nom);
+        initEmpty();
+    }
+
+
+    public Client(String nom, Adresse adresse, String telephone) {
+        super(nom, adresse, telephone);
+        initEmpty();
+    }
+
+
+    private void initEmpty(){
+        listeCompteBanquaires = new ArrayList<>();
+        carteBanquaires = new ArrayList<>();
+        placements = new ArrayList<>();
+    }
 
 
 
 
+    public List<CompteBanquaire> getListeCompteBanquaires() {
+        return listeCompteBanquaires;
+    }
 
+    public List<CarteBanquaire> getCarteBanquaires() {
+        return carteBanquaires;
+    }
+
+    public List<Placement> getPlacements() {
+        return placements;
+    }
+
+    //Todo vérifier la validité de la méthode
     public boolean addCompteBanquaire(CompteBanquaire compteBanquaire){
         if(listeCompteBanquaires != null){
 

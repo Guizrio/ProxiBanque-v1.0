@@ -8,4 +8,23 @@ import java.time.LocalDateTime;
 public class CompteCourant extends CompteBanquaire {
 
     private double decouvertAutorise;
+
+    public CompteCourant(long numCompte, LocalDateTime dateOuverture) {
+        super(numCompte, dateOuverture);
+        init();
+    }
+
+    public CompteCourant(long numCompte, double solde, LocalDateTime dateOuverture) {
+        super(numCompte, solde, dateOuverture);
+        init();
+    }
+
+    private void init(){
+        decouvertAutorise = 1000;
+    }
+
+
+    public double getDecouvertAutorise() {
+        return decouvertAutorise;
+    }
 }

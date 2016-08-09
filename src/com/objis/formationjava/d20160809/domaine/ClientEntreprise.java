@@ -6,6 +6,14 @@ package com.objis.formationjava.d20160809.domaine;
 public class ClientEntreprise extends Client{
 
 
+    public ClientEntreprise(String nom) {
+        super(nom);
+    }
+
+    public ClientEntreprise(String nom, Adresse adresse, String telephone) {
+        super(nom, adresse, telephone);
+    }
+
     @Override
     public double getMaxDebit() {
         return 0;

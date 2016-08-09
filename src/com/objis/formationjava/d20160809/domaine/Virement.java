@@ -10,7 +10,29 @@ public class Virement {
     private double montant;
 
 
+    public Virement(long idCompteDebiteur, long idCompteRecepteur, double montant) {
+        this.idCompteDebiteur = idCompteDebiteur;
+        this.idCompteRecepteur = idCompteRecepteur;
+        this.montant = montant;
+    }
 
+    public long getIdCompteDebiteur() {
+        return idCompteDebiteur;
+    }
 
+    public long getIdCompteRecepteur() {
+        return idCompteRecepteur;
+    }
 
+    public double getMontant() {
+        return montant;
+    }
+
+    public boolean isThisConcernCompte(CompteBanquaire compteBanquaire){
+        if (compteBanquaire.getNumCompte() == idCompteDebiteur || compteBanquaire.getNumCompte() == idCompteRecepteur){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

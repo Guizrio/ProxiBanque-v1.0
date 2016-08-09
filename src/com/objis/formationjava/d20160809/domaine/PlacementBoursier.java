@@ -5,4 +5,7 @@ package com.objis.formationjava.d20160809.domaine;
  */
 public class PlacementBoursier extends Placement {
 
+    public PlacementBoursier(String ville, double montant) {
+        super(ville, montant);
+    }
 }

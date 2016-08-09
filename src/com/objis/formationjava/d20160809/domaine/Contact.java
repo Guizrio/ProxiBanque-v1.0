@@ -10,5 +10,34 @@ public abstract class Contact {
     private String telephone;
 
 
+    public Contact(String nom) {
+        this.nom = nom;
+    }
 
+    public Contact(String nom, Adresse adresse, String telephone) {
+        this.nom = nom;
+        this.adresse = adresse;
+        this.telephone = telephone;
+    }
+
+
+    public String getNom() {
+        return nom;
+    }
+
+    public Adresse getAdresse() {
+        return adresse;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public void setAdresse(Adresse adresse) {
+        this.adresse = adresse;
+    }
 }

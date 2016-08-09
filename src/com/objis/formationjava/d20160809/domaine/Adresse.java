@@ -9,4 +9,21 @@ public class Adresse {
     private String codePostal;
     private String ville;
 
+    public Adresse(String adresse, String codePostal, String ville) {
+        this.adresse = adresse;
+        this.codePostal = codePostal;
+        this.ville = ville;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public String getCodePostal() {
+        return codePostal;
+    }
+
+    public String getVille() {
+        return ville;
+    }
 }

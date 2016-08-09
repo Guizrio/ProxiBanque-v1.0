@@ -8,4 +8,8 @@ public abstract class Placement {
     private String ville;
     private double montant;
 
+    public Placement(String ville, double montant) {
+        this.ville = ville;
+        this.montant = montant;
+    }
 }
