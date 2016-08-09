@@ -5,10 +5,11 @@ import java.util.List;
 /**
  * Created by Stagiaire on 09/08/2016.
  */
-public abstract class Client extends Contact {
+public abstract class Client extends Contact implements Idebiteur {
 
     List<CompteBanquaire> listeCompteBanquaires;
     List<CarteBanquaire> CarteBanquaires;
+    List<Placement> placements;
 
 
 
