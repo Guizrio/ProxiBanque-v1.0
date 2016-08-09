@@ -1,41 +1,97 @@
 package com.objis.formationjava.d20160809.service;
 
-import com.objis.formationjava.d20160809.domaine.Client;
-import com.objis.formationjava.d20160809.domaine.Conseiller;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.objis.formationjava.d20160809.DAO.ConseillerDAO;
+import com.objis.formationjava.d20160809.domaine.*;
 
 /**
  * Created by Stagiaire on 09/08/2016.
  */
 public class ConseillerService {
 
+	ConseillerDAO conseillerDAO1 = new ConseillerDAO();
 
-    //Todo refaire la methode
-    public boolean addClient(Client client, Conseiller conseiller){
+	public ArrayList<Conseiller> getAllConseillers() {
 
-        //Un client ne peut être ajouté que si celui-ci n'est pas null, que le conseiller n'est pas null.
-        if(client ==null || conseiller == null){
+		return conseillerDAO1.getAllConseillers();
+	}
 
-            return false;
-        }else{
+	// Todo refaire la methode
+	public boolean addClient(Client client, Conseiller conseiller) {
 
-            //Test si le conseiller a déjà un nombre maximum de client à sa charge
-            if(conseiller.getClients().size() >= 10){
-                return false;
-            }else{
+		// Un client ne peut être ajouté que si celui-ci n'est pas null, que
+		// le conseiller n'est pas null.
+		if (client == null || conseiller == null) {
 
-                //Test si le client avait déjà un conseiller, si c'et le cas, on retire le client du précédent conseiller
-                if(client.getConseiller() != null){
-                    client.getConseiller().removeClient(client);
-                }
+			return false;
+		} else {
 
-                //On met à jour la relation client <-> conseiller
-                client.setConseiller(conseiller);
-                conseiller.addClient(client);
+			// Test si le conseiller a déjà un nombre maximum de client à sa
+			// charge
+			if (conseiller.getClients().size() >= 10) {
+				return false;
+			} else {
 
-                return true;
+				// Test si le client avait déjà un conseiller, si c'et le cas,
+				// on retire le client du précédent conseiller
+				if (client.getConseiller() != null) {
+					client.getConseiller().removeClient(client);
+				}
 
-            }
-        }
-    }
+				// On met à jour la relation client <-> conseiller
+				client.setConseiller(conseiller);
+				conseiller.addClient(client);
+
+				return true;
+
+			}
+		}
+	}
+
+	// Todo refaire la methode
+	public boolean addClientParSaisi(Conseiller conseiller) {
+
+		// Un client ne peut être ajouté que si celui-ci n'est pas null, que
+		// le conseiller n'est pas null.
+		if (conseiller == null) {
+
+			return false;
+		} else {
+
+			// Test si le conseiller a déjà un nombre maximum de client à sa
+			// charge
+			if (conseiller.getClients().size() >= 10) {
+				return false;
+			} else {
+				Scanner sc = new Scanner(System.in);
+				System.out.println("R�pondre aux demandes suivantes pour remplir le dossier client");
+				System.out.println("Veuillez entrer le nom du client � ajouter");
+				String nom = sc.nextLine();
+				System.out.println("Veuillez entrer le prenom du client � ajouter");
+				String prenom = sc.nextLine();
+				System.out.println("Veuillez entrer la ville du client � ajouter");
+				String ville = sc.nextLine();
+				System.out.println("Veuillez entrer le code postal du client � ajouter");
+				String codepostal = sc.nextLine();
+				System.out.println("Veuillez entrer le numero et le nom de la rue du client � ajouter");
+				String adresse = sc.nextLine();
+				System.out.println("Veuillez entrer le numero de t�l�phone du client � ajouter");
+				String pTelephone = sc.nextLine();
+				sc.close();
+				ClientParticulier clientsaisie = new ClientParticulier(nom, new Adresse(adresse, codepostal, ville), pTelephone,
+						conseiller, new ArrayList<CompteBanquaire>(), new ArrayList<CarteBanquaire>(),
+						new ArrayList<Placement>(), prenom);
+
+				// On met à jour la relation client <-> conseiller
+				clientsaisie.setConseiller(conseiller);
+				conseiller.addClient(clientsaisie);
+
+				return true;
+
+			}
+		}
+	}
 
 }
