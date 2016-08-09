@@ -16,6 +16,6 @@ public class ClientEntreprise extends Client{
 
     @Override
     public double getMaxDebit() {
-        return 0;
+        return 50000.0;
     }
 }

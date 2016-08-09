@@ -28,6 +28,6 @@ public class ClientParticulier extends Client{
 
     @Override
     public double getMaxDebit() {
-        return 0;
+        return 5000.0;
     }
 }
