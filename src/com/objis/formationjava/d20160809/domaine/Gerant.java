@@ -7,6 +7,6 @@ import java.util.List;
  */
 public class Gerant extends Conseiller {
 
-    List<Conseiller> conseillers;
+    
 
 }

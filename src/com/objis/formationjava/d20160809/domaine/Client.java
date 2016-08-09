@@ -7,33 +7,71 @@ import java.util.List;
  */
 public abstract class Client extends Contact {
 
-    List<CompteBanquaire> listeCompteBanquaires;
-    List<CarteBanquaire> CarteBanquaires;
+	List<CompteBanquaire> listeCompteBanquaires;
+	List<CarteBanquaire> listeCarteBanquaires;
+	
+	
+	
+	
+	public boolean removeCarteBancaire(CarteBanquaire carteBanquaire) {
+		return this.listeCarteBanquaires.remove(carteBanquaire);
+	}
 
+	public boolean addCarteBanquaire(CarteBanquaire carteBanquaire) {
+		int nbMemeClass = 0;
 
+		if (listeCarteBanquaires != null) {
 
+			for (CarteBanquaire carte : this.listeCarteBanquaires) {
+				if (carte.getClass() == carteBanquaire.getClass()) {
+					nbMemeClass++;
+				}
+			}
+		}
 
+		if (nbMemeClass < 1) {
+			return listeCarteBanquaires.add(carteBanquaire);
+		} else {
+			return false;
+		}
 
-    public boolean addCompteBanquaire(CompteBanquaire compteBanquaire){
-        if(listeCompteBanquaires != null){
+	}
+	
+	
+	
+	
+	public boolean removeCompteBancaire(CompteBanquaire compteBanquaire) {
+		return this.listeCompteBanquaires.remove(compteBanquaire);
+	}
 
-            int nbMemeClass = 0;
+	
+	/**
+	 * ajoute un compte banquaire a la liste des compte du client 
+	 * en assurant que le client ne possede qu un compte de chaque type
+	 * @param compteBanquaire
+	 * @return
+	 */
+	
+	
+	
+	public boolean addCompteBanquaire(CompteBanquaire compteBanquaire) {
+		int nbMemeClass = 0;
 
-            for (int i = 0; i < listeCompteBanquaires.size(); i++) {
-                if(listeCompteBanquaires.get(i).getClass() == compteBanquaire.getClass()){
-                    nbMemeClass++;
-                }
-            }
+		if (listeCompteBanquaires != null) {
 
-            if(nbMemeClass  < 1){
-                listeCompteBanquaires.add(compteBanquaire);
-                return true;
-            }
+			for (CompteBanquaire compte : this.listeCompteBanquaires) {
+				if (compte.getClass() == compteBanquaire.getClass()) {
+					nbMemeClass++;
+				}
+			}
+		}
 
+		if (nbMemeClass < 1) {
+			return listeCompteBanquaires.add(compteBanquaire);
+		} else {
+			return false;
+		}
 
-        }
-
-        return false;
-    }
+	}
 
 }
