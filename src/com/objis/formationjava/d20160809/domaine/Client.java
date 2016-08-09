@@ -9,7 +9,7 @@ public abstract class Client extends Contact {
 
 	List<CompteBanquaire> listeCompteBanquaires;
 	List<CarteBanquaire> listeCarteBanquaires;
-	
+	Conseiller conseiller;
 	
 	
 	
@@ -17,8 +17,10 @@ public abstract class Client extends Contact {
 		return this.listeCarteBanquaires.remove(carteBanquaire);
 	}
 
+
 	public boolean addCarteBanquaire(CarteBanquaire carteBanquaire) {
 		int nbMemeClass = 0;
+
 
 		if (listeCarteBanquaires != null) {
 
@@ -51,9 +53,7 @@ public abstract class Client extends Contact {
 	 * @param compteBanquaire
 	 * @return
 	 */
-	
-	
-	
+	//Todo vérifier validité de la fonction
 	public boolean addCompteBanquaire(CompteBanquaire compteBanquaire) {
 		int nbMemeClass = 0;
 
@@ -73,5 +73,26 @@ public abstract class Client extends Contact {
 		}
 
 	}
+
+    public List<CompteBanquaire> getListeCompteBanquaires() {
+        return listeCompteBanquaires;
+    }
+
+    public List<CarteBanquaire> getCarteBanquaires() {
+        return listeCarteBanquaires;
+    }
+
+    public Conseiller getConseiller() {
+        return conseiller;
+    }
+
+
+    public void setConseiller(Conseiller conseiller) {
+        this.conseiller = conseiller;
+    }
+
+    public boolean hasConseiller(){
+        return conseiller != null;
+    }
 
 }
