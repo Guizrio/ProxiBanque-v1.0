@@ -12,14 +12,12 @@ import java.util.List;
  */
 public class ConseillerService {
 
-    ConseillerDao conseillerDao = new ConseillerDao();
+    private ConseillerDao conseillerDao = new ConseillerDao();
 
-    public List<Conseiller> getAllConseiller(Agence agence){
+    public List<Conseiller> getAllConseiller(){return conseillerDao.getAllConseiller();}
+
+    public List<Conseiller> getAllConseillerOfAgence(Agence agence){
         return conseillerDao.getAllConseiller(agence);
-    }
-
-    public List<Conseiller> getAllConseiller(){
-        return conseillerDao.getAllConseiller();
     }
 
     public Agence getAgenceOfConseiller(Conseiller conseiller){
@@ -29,7 +27,26 @@ public class ConseillerService {
     public void addClient(Agence agence, Conseiller conseiller, Client client){
         new AgenceService().addClient(agence, client);
         conseiller.addClient(client);
+
+        Conseiller conseiller1 = getConseillerOfClient(client);
+
+        if(conseiller1 != null){
+            conseiller1.removeClient(client);
+            conseillerDao.update(conseiller1);
+        }
+
         conseillerDao.update(conseiller);
     }
+
+
+    public void removeClientFromConseiller(Conseiller conseiller, Client client){
+        conseiller.removeClient(client);
+        conseillerDao.update(conseiller);
+    }
+
+    public Conseiller getConseillerOfClient(Client client){
+        return conseillerDao.getConseillerOfClient(client);
+    }
+
 
 }

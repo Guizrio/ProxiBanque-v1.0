@@ -1,6 +1,7 @@
 package com.objis.formationjava.d20160809.dao;
 
 import com.objis.formationjava.d20160809.domaine.Agence;
+import com.objis.formationjava.d20160809.domaine.Client;
 import com.objis.formationjava.d20160809.domaine.Conseiller;
 
 import java.util.List;
@@ -23,6 +24,10 @@ public class ConseillerDao {
     }
 
     public Agence getAgenceOfConseiller(Conseiller conseiller){
+        return null;
+    }
+
+    public Conseiller getConseillerOfClient(Client client){
         return null;
     }
 

@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class AgenceService {
 
-    AgenceDao agenceDao = new AgenceDao();
+    private AgenceDao agenceDao = new AgenceDao();
 
     public List<Agence> getAllAgence(){
         return agenceDao.getAllAgence();
