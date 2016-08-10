@@ -57,7 +57,18 @@ public class CompteEpargne extends CompteBanquaire {
                 ", solde=" + getSolde()+
                 ", dateOuverture=" + getDateOuverture()+
                 ", historiqueVirements=" + getHistoriqueVirements()+
-                "tauxRemuneration=" + tauxRemuneration +
+                ", tauxRemuneration=" + tauxRemuneration +
+                '}';
+    }
+
+
+    @Override
+    public String alternateToString() {
+        return "CompteEpargne{" +
+                ", numCompte=" + getNumCompte()+
+                ", solde=" + getSolde()+
+                ", dateOuverture=" + getDateOuverture()+
+                ", tauxRemuneration=" + tauxRemuneration +
                 '}';
     }
 }
