@@ -80,7 +80,7 @@ public class CompteCourant extends CompteBanquaire {
 
     @Override
     public String alternateToString() {
-        return "CompteCourant{" +
+        return "\tCompteCourant{" +
                 ", numCompte=" + getNumCompte()+
                 ", solde=" + getSolde()+
                 ", dateOuverture=" + getDateOuverture()+

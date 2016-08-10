@@ -50,9 +50,7 @@ public abstract class CompteBanquaire {
     }
 
 
-    public void ajouterMontant(double montant){
-        solde += montant;
-    }
+    public void ajouterMontant(double montant){solde += montant;}
 
     public void retirerMontant(double montant){
         solde -= montant;
@@ -135,7 +133,7 @@ public abstract class CompteBanquaire {
 
 
     public String alternateToString() {
-        return "CompteBanquaire{" +
+        return "\tCompteBanquaire{" +
                 "numCompte=" + numCompte +
                 ", solde=" + solde +
                 ", dateOuverture=" + dateOuverture +

@@ -108,7 +108,7 @@ public abstract class Client extends Contact implements Idebiteur {
     }
 
     public String alternateToString(){
-        return "Client{" +
+        return "\tClient{" +
                 "nom='" + getNom() + '\'' +
                 ", adresse=" + getAdresse() +
                 '}';

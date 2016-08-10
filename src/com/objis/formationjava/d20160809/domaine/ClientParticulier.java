@@ -66,7 +66,7 @@ public class ClientParticulier extends Client{
 
     @Override
     public String alternateToString(){
-        return "\nClientParticulier{" +
+        return "\tClientParticulier{" +
                 "prenom='" + prenom + '\'' +
                 "nom='" + getNom() + '\'' +
                 ", adresse=" + getAdresse() +

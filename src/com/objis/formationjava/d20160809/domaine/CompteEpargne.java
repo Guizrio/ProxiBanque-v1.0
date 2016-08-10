@@ -64,7 +64,7 @@ public class CompteEpargne extends CompteBanquaire {
 
     @Override
     public String alternateToString() {
-        return "CompteEpargne{" +
+        return "\tCompteEpargne{" +
                 ", numCompte=" + getNumCompte()+
                 ", solde=" + getSolde()+
                 ", dateOuverture=" + getDateOuverture()+
