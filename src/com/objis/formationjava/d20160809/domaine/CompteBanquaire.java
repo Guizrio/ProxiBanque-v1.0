@@ -125,4 +125,14 @@ public abstract class CompteBanquaire {
                 ", historiqueVirements=" + historiqueVirements +
                 '}';
     }
+
+
+    public String alternateToString() {
+        return "CompteBanquaire{" +
+                "numCompte=" + numCompte +
+                ", solde=" + solde +
+                ", dateOuverture=" + dateOuverture +
+                '}';
+    }
+
 }

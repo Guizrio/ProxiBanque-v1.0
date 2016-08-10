@@ -106,4 +106,11 @@ public abstract class Client extends Contact implements Idebiteur {
                 ", placements=" + placements +
                 '}';
     }
+
+    public String alternateToString(){
+        return "Client{" +
+                "nom='" + getNom() + '\'' +
+                ", adresse=" + getAdresse() +
+                '}';
+    }
 }

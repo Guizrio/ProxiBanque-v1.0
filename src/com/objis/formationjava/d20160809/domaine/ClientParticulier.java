@@ -53,7 +53,7 @@ public class ClientParticulier extends Client{
 
     @Override
     public String toString() {
-        return "ClientParticulier{" +
+        return "\nClientParticulier{" +
                 "prenom='" + prenom + '\'' +
                 "nom='" + getNom() + '\'' +
                 ", adresse=" + getAdresse() +
@@ -63,4 +63,14 @@ public class ClientParticulier extends Client{
                 ", placements=" + getPlacements() +
                 '}';
     }
+
+    @Override
+    public String alternateToString(){
+        return "\nClientParticulier{" +
+                "prenom='" + prenom + '\'' +
+                "nom='" + getNom() + '\'' +
+                ", adresse=" + getAdresse() +
+                '}';
+    }
+
 }

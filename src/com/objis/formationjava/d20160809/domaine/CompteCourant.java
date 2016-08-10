@@ -56,7 +56,17 @@ public class CompteCourant extends CompteBanquaire {
                 ", solde=" + getSolde()+
                 ", dateOuverture=" + getDateOuverture()+
                 ", historiqueVirements=" + getHistoriqueVirements()+
-                "decouvertAutorise=" + getDecouvertAutorise()+
+                ", decouvertAutorise=" + getDecouvertAutorise()+
+                '}';
+    }
+
+    @Override
+    public String alternateToString() {
+        return "CompteCourant{" +
+                ", numCompte=" + getNumCompte()+
+                ", solde=" + getSolde()+
+                ", dateOuverture=" + getDateOuverture()+
+                ", decouvertAutorise=" + getDecouvertAutorise()+
                 '}';
     }
 }
