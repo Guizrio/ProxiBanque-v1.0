@@ -11,6 +11,13 @@ import java.time.LocalDateTime;
  */
 public class CarteVisaElectron extends CarteBanquaire{
 
+    /**
+      * Constructeur de carte Visa electron à partir de son numéro de carte, son etat d'activation, et ses dates de début et de fin d'activation 
+     * @param numCarte numéro de carte de la carte banquaire
+     * @param active etat d'activation de la carte;
+     * @param dateDebutValidite date de début de validité de la carte
+     * @param dateFinValidite date de fin de validité de la carte
+     */
     public CarteVisaElectron(long numCarte, boolean active, LocalDateTime dateDebutValidite, LocalDateTime dateFinValidite) {
         super(numCarte, active, dateDebutValidite, dateFinValidite);
     }

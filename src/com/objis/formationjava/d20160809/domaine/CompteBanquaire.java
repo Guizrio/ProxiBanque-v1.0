@@ -6,7 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Stagiaire on 09/08/2016.
+ * Classe abstraite permettant de definir les objets Compte Banquaire. Les comptes banquaires sont définies par: leur numéros de compte (long),
+ * <p>
+ * leur solde (double), leur date d'ouverture et un historique des virement;
+ * 
+ * @author Guillaume et Vincent
  */
 public abstract class CompteBanquaire {
 
@@ -16,6 +20,13 @@ public abstract class CompteBanquaire {
     private List<Virement> historiqueVirements;
 
 
+    /**
+     * Constructeur de compte bancaire à partir d'un numero de compte et d'une date d'ouverture de compte.
+     * <p>
+     * le solde est initialisé par défaut à 0 et l'historique comme un Arraylist vide;
+     * @param numCompte numero de compte assigné au compte
+     * @param dateOuverture date d'ouverture du compte
+     */
     public CompteBanquaire(long numCompte, LocalDateTime dateOuverture) {
         this.numCompte = numCompte;
         this.dateOuverture = dateOuverture;
@@ -23,6 +34,14 @@ public abstract class CompteBanquaire {
         historiqueVirements = new ArrayList<>();
     }
 
+    /**
+     * Constructeur de compte bancaire à partir d'un numero de compte et d'une date d'ouverture de compte et d'un solde.
+     * <p>
+     * l'historique est initialisé comme un Arraylist vide;
+     * @param numCompte numero de compte assigné au compte
+     * @param solde solde initial du compte;
+     * @param dateOuverture date d'ouverture du compte
+     */
     public CompteBanquaire(long numCompte, double solde, LocalDateTime dateOuverture) {
         this.numCompte = numCompte;
         this.solde = solde;
