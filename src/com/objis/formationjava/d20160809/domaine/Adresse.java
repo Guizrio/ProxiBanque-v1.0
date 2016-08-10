@@ -36,6 +36,13 @@ public class Adresse {
     public String getVille() {
         return ville;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Adresse{" +
+                "adresse='" + adresse + '\'' +
+                ", codePostal='" + codePostal + '\'' +
+                ", ville='" + ville + '\'' +
+                '}';
+    }
 }
