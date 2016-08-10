@@ -1,5 +1,7 @@
 package com.objis.formationjava.d20160809.domaine;
 
+import com.objis.formationjava.d20160809.exceptions.ImpossibleLinkException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +50,7 @@ public abstract class Client extends Contact implements Idebiteur {
     }
 
     //Todo vérifier la validité de la méthode
-    public boolean addCompteBanquaire(CompteBanquaire compteBanquaire){
+    public boolean addCompteBanquaire(CompteBanquaire compteBanquaire) throws ImpossibleLinkException{
         if(listeCompteBanquaires != null){
 
             int nbMemeClass = 0;
@@ -67,7 +69,7 @@ public abstract class Client extends Contact implements Idebiteur {
 
         }
 
-        return false;
+        throw new ImpossibleLinkException("Impossible de relier le compte banquaire au client");
     }
 
 }
