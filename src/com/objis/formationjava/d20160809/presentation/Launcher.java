@@ -1,6 +1,7 @@
 package com.objis.formationjava.d20160809.presentation;
 
 import com.objis.formationjava.d20160809.domaine.*;
+import com.objis.formationjava.d20160809.exceptions.CreatePlacementException;
 import com.objis.formationjava.d20160809.exceptions.CreateVirementException;
 import com.objis.formationjava.d20160809.exceptions.ImpossibleLinkException;
 import com.objis.formationjava.d20160809.service.*;
@@ -20,6 +21,7 @@ public class Launcher {
         ClientService clientService = new ClientService();
         CompteBanquaireService compteBanquaireService = new CompteBanquaireService();
         VirementService virementService = new VirementService();
+        PlacementService placementService = new PlacementService();
 
 
         Agence agence = agenceService.createAgence();
@@ -48,14 +50,29 @@ public class Launcher {
 
         try {
             virementService.createVirement(proxiBanque);
+            System.out.println("\nVirement effectué !\n");
         } catch (CreateVirementException e) {
             e.printStackTrace();
         }
 
 
+        System.out.println("Voici les résultats des comptes des clients :");
+        System.out.println(clients);
+        System.out.println("\n\n");
+
+
+        try {
+            placementService.createPlacement(proxiBanque);
+            System.out.println("placement réalisé !");
+        } catch (CreatePlacementException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Voici les résultats des clients :");
+        System.out.println(clients);
+        System.out.println("\n\n");
+
         System.out.println();
-
-
 
 
     }

@@ -5,6 +5,7 @@ package com.objis.formationjava.d20160809.domaine;
  */
 public abstract class Placement {
 
+    protected String type;
     private String ville;
     private double montant;
 
@@ -16,8 +17,13 @@ public abstract class Placement {
     @Override
     public String toString() {
         return "Placement{" +
-                "ville='" + ville + '\'' +
+                "type='" + type + '\'' +
+                ", ville='" + ville + '\'' +
                 ", montant=" + montant +
                 '}';
+    }
+
+    public String getType() {
+        return type;
     }
 }

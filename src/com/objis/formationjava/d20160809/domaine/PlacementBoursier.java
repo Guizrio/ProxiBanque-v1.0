@@ -7,5 +7,7 @@ public class PlacementBoursier extends Placement {
 
     public PlacementBoursier(String ville, double montant) {
         super(ville, montant);
+        type = "Boursier";
+
     }
 }

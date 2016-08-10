@@ -30,9 +30,13 @@ public class CompteBanquaireService {
             compteBanquaires.add(createCompteCourant());
         }
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 1; i++) {
             compteBanquaires.add(createCompteEpargne());
         }
+
+        CompteEpargne compteEpargne = (CompteEpargne) createCompteEpargne();
+        compteEpargne.ajouterMontant(500001);
+        compteBanquaires.add(compteEpargne);
 
 
         return compteBanquaires;

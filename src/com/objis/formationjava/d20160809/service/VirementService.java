@@ -77,8 +77,6 @@ public class VirementService {
                 System.out.println("\nEntrez le montant du virement :");
                 double montant = Double.valueOf(sc.nextLine());
 
-                sc.close();
-
                 Virement virement = new Virement(compteDebiteur.getNumCompte(), compteCrediteur.getNumCompte(), montant);
 
                 compteDebiteur.ajouterVirement(virement);

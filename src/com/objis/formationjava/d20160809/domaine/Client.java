@@ -49,6 +49,11 @@ public abstract class Client extends Contact implements Idebiteur {
         return placements;
     }
 
+    public void addPlacement(Placement placement){
+        placements.add(placement);
+    }
+
+
     //Todo vérifier la validité de la méthode
     public boolean addCompteBanquaire(CompteBanquaire compteBanquaire) throws ImpossibleLinkException{
         if(listeCompteBanquaires != null){

@@ -6,6 +6,8 @@ package com.objis.formationjava.d20160809.domaine;
 public class PlacementImmobillier extends Placement {
 
     public PlacementImmobillier(String ville, double montant) {
+
         super(ville, montant);
+        type = "Logement";
     }
 }
