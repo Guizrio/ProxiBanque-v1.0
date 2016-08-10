@@ -3,17 +3,35 @@ package com.objis.formationjava.d20160809.domaine;
 import java.time.LocalDateTime;
 
 /**
- * Created by Stagiaire on 09/08/2016.
+ * Classe  permettant de creer les objets Comptes courants. Les comptes courants sont définis par: leur numéros de compte (long),
+ * <p>
+ * leur solde (double), leur date d'ouverture et un historique des virement ainsi que par le découvert autorisé sur le compte;
+ * 
+ * @author Guillaume et Vincent
  */
 public class CompteCourant extends CompteBanquaire {
 
     private double decouvertAutorise;
 
+    /**
+     * Constructeur de compte bancaire à partir d'un numero de compte et d'une date d'ouverture de compte.
+     * <p>
+     * le solde est initialisé par défaut à 0, l'historique comme étant un Arraylist vide et le découvert autorisé à 1000;
+     * @param numCompte numero de compte assigné au compte
+     * @param dateOuverture date d'ouverture du compte
+     */
     public CompteCourant(long numCompte, LocalDateTime dateOuverture) {
         super(numCompte, dateOuverture);
         init();
     }
 
+    /**
+     * Constructeur de compte bancaire à partir d'un numero de compte et d'une date d'ouverture de compte et d'un solde.
+     * <p>
+     *  l'historique est initialisé comme étant un Arraylist vide et le découvert autorisé à 1000;
+     * @param numCompte numero de compte assigné au compte
+     * @param dateOuverture date d'ouverture du compte
+     */
     public CompteCourant(long numCompte, double solde, LocalDateTime dateOuverture) {
         super(numCompte, solde, dateOuverture);
         init();

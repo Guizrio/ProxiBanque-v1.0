@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe abstraite permettant de definir les objets Compte Banquaire. Les comptes banquaires sont définies par: leur numéros de compte (long),
+ * Classe abstraite permettant de definir les objets Compte Banquaire. Les comptes banquaires sont définis par: leur numéros de compte (long),
  * <p>
  * leur solde (double), leur date d'ouverture et un historique des virement;
  * 
@@ -59,6 +59,13 @@ public abstract class CompteBanquaire {
     }
 
 
+    /**
+     * Methode permettant d'ajouter un virement à l'historique du compte
+     * <p>
+     * Cela n'execute pas le Virement!! on n'a donc pas de variation de solde du compte dans cette methode
+     * @param virement virement à ajouter à l'historique
+     * @return
+     */
     public boolean ajouterVirement(Virement virement){
 
         //Test si le virement est bien pour ce compte
