@@ -18,4 +18,5 @@ public class ClientEntreprise extends Client{
     public double getMaxDebit() {
         return 50000.0;
     }
+
 }

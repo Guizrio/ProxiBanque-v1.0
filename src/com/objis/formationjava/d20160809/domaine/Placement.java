@@ -12,4 +12,12 @@ public abstract class Placement {
         this.ville = ville;
         this.montant = montant;
     }
+
+    @Override
+    public String toString() {
+        return "Placement{" +
+                "ville='" + ville + '\'' +
+                ", montant=" + montant +
+                '}';
+    }
 }

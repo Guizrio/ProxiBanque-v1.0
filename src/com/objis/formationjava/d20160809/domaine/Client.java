@@ -72,4 +72,38 @@ public abstract class Client extends Contact implements Idebiteur {
         throw new ImpossibleLinkException("Impossible de relier le compte banquaire au client");
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Client)) return false;
+
+        Client client = (Client) o;
+
+        if (listeCompteBanquaires != null ? !listeCompteBanquaires.equals(client.listeCompteBanquaires) : client.listeCompteBanquaires != null)
+            return false;
+        if (carteBanquaires != null ? !carteBanquaires.equals(client.carteBanquaires) : client.carteBanquaires != null)
+            return false;
+        return placements != null ? placements.equals(client.placements) : client.placements == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = listeCompteBanquaires != null ? listeCompteBanquaires.hashCode() : 0;
+        result = 31 * result + (carteBanquaires != null ? carteBanquaires.hashCode() : 0);
+        result = 31 * result + (placements != null ? placements.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "nom='" + getNom() + '\'' +
+                ", adresse=" + getAdresse() +
+                ", telephone='" + getTelephone() + '\'' +
+                ", listeCompteBanquaires=" + listeCompteBanquaires +
+                ", carteBanquaires=" + carteBanquaires +
+                ", placements=" + placements +
+                '}';
+    }
 }

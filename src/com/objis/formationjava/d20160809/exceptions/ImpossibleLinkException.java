@@ -6,6 +6,7 @@ package com.objis.formationjava.d20160809.exceptions;
 public class ImpossibleLinkException extends Exception {
 
     public ImpossibleLinkException() {
+        super();
     }
 
     public ImpossibleLinkException(String message) {

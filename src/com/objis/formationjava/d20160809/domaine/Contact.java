@@ -5,7 +5,7 @@ package com.objis.formationjava.d20160809.domaine;
  */
 public abstract class Contact {
 
-    private String nom;
+    protected String nom;
     private Adresse adresse;
     private String telephone;
 
@@ -39,5 +39,14 @@ public abstract class Contact {
 
     public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
+    }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "nom='" + nom + '\'' +
+                ", adresse=" + adresse +
+                ", telephone='" + telephone + '\'' +
+                '}';
     }
 }

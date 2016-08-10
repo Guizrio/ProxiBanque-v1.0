@@ -14,11 +14,11 @@ import java.util.List;
 public class CompteBanquaireService {
 
     public CompteBanquaire createCompteEpargne(){
-        return new CompteEpargne(Long.valueOf(MyRandomizer.generateInt(10)), LocalDateTime.now());
+        return new CompteEpargne(Long.valueOf(MyRandomizer.generateInt(5)), LocalDateTime.now());
     }
 
     public CompteBanquaire createCompteCourant(){
-        return new CompteCourant(Long.valueOf(MyRandomizer.generateInt(10)), LocalDateTime.now());
+        return new CompteCourant(Long.valueOf(MyRandomizer.generateInt(5)), LocalDateTime.now());
     }
 
 

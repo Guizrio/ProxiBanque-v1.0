@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class AgenceService {
 
     public Agence createAgence(){
-        return new Agence(String.valueOf(MyRandomizer.generateInt(10)),
+        return new Agence(String.valueOf(MyRandomizer.generateInt(6)),
                 LocalDateTime.now(),
                 new Adresse("adresse_" + MyRandomizer.generate(5),
                 MyRandomizer.generateCodePostal(),

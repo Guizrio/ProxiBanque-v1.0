@@ -30,4 +30,37 @@ public class ClientParticulier extends Client{
     public double getMaxDebit() {
         return 5000.0;
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ClientParticulier)) return false;
+        if (!super.equals(o)) return false;
+
+        ClientParticulier that = (ClientParticulier) o;
+
+        return prenom != null ? prenom.equals(that.prenom) : that.prenom == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (prenom != null ? prenom.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "ClientParticulier{" +
+                "prenom='" + prenom + '\'' +
+                "nom='" + getNom() + '\'' +
+                ", adresse=" + getAdresse() +
+                ", telephone='" + getTelephone() + '\'' +
+                ", listeCompteBanquaires=" + getListeCompteBanquaires() +
+                ", carteBanquaires=" + getCarteBanquaires() +
+                ", placements=" + getPlacements() +
+                '}';
+    }
 }

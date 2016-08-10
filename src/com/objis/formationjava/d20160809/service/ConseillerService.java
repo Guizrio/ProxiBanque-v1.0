@@ -40,7 +40,7 @@ public class ConseillerService {
                 System.err.println("Le nombre maximal de client est déjà attribué pour le conseiller " + conseiller);
             }else{
 
-                if(agence.getConseillers() == null){
+                if(agence.getConseillers() == null || agence.getConseillers().isEmpty()){
                     agence.addConseiller(conseiller);
                     System.out.println("Le conseiller a été ajouté à l'agence");
                 }
