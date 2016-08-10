@@ -1,7 +1,11 @@
 package com.objis.formationjava.d20160809.domaine;
 
 /**
- * Created by Stagiaire on 09/08/2016.
+ * Classe permettant de créer des objets Virement.
+ * <p>
+ * Un Virement est composée de 3 nombres: l'identifiant du compte débiteur, l'identifiant du compte crédité, le montant du virement.
+ * 
+ * @author Guillaume et Vincent
  */
 public class Virement {
 

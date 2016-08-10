@@ -14,7 +14,7 @@ public class CompteCourant extends CompteBanquaire {
     private double decouvertAutorise;
 
     /**
-     * Constructeur de compte bancaire à partir d'un numero de compte et d'une date d'ouverture de compte.
+     * Constructeur de compte courants à partir d'un numero de compte et d'une date d'ouverture de compte.
      * <p>
      * le solde est initialisé par défaut à 0, l'historique comme étant un Arraylist vide et le découvert autorisé à 1000;
      * @param numCompte numero de compte assigné au compte
@@ -26,7 +26,7 @@ public class CompteCourant extends CompteBanquaire {
     }
 
     /**
-     * Constructeur de compte bancaire à partir d'un numero de compte et d'une date d'ouverture de compte et d'un solde.
+     * Constructeur de compte courants à partir d'un numero de compte et d'une date d'ouverture de compte et d'un solde.
      * <p>
      *  l'historique est initialisé comme étant un Arraylist vide et le découvert autorisé à 1000;
      * @param numCompte numero de compte assigné au compte

@@ -3,9 +3,9 @@ package com.objis.formationjava.d20160809.domaine;
 import java.time.LocalDateTime;
 
 /**
- * Classe permettant de créer des objets Carte visa Electron . Les cartes banquaires sont définies par: leur numéros de carte (long),
+ * Classe permettant de créer des objets Carte visa Electron . Hérite de la classe abstraite CarteBancaire.
  * <p>
- * leur etat d'activation (booléen), leur date de début de et de fin de validité(LocalDateTime)
+ * Les cartes banquaires sont définies par: leur numéros de carte (long), leur etat d'activation (booléen), leur date de début de et de fin de validité(LocalDateTime)
  * 
  * @author Guillaume et Vincent
  */

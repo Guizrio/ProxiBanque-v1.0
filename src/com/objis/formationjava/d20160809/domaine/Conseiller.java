@@ -4,19 +4,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Stagiaire on 09/08/2016.
+ * Classe permettant de créer des objets Conseillers. Hérite de la classe abstraite Contact.
+ * <p>
+ * Un conseiller est caractérisé par son nom, son adresse et son numéro de télephone ainsi que par son prénom et une liste de Clients.
+ * 
+ * @author Guillaume et Vincent
  */
 public class Conseiller extends Contact {
 
     private String prenom;
     private List<Client> clients;
 
+    /**
+     * Constructeur de conseillers à partir de son nom et son prénom.
+     * <p>
+     * On considère que le conseiller commence avec aucun client associé et donc une liste clients vide. Son adresse et
+     * <p>
+     * numéro de teléphone ne sont pas initialisé (null).
+     * @param nom nom du conseiller
+     * @param prenom prénom du conseiller
+     */
     public Conseiller(String nom, String prenom) {
         super(nom);
         this.prenom = prenom;
         initEmpty();
     }
 
+    /**
+     * Constructeur de conseillers à partir de son nom, son prénom, son adresse et son numéro de téléphone
+     * <p>
+     * On considère que le conseiller commence avec aucun client associé et donc une liste clients vide.
+     * @param nom nom du conseiller
+     * @param prenom prénom du conseiller
+     * @param adresse adresse du conseiller (type adresse)
+     * @param telephone numéro de téléphone
+     */
     public Conseiller(String nom, String prenom, Adresse adresse, String telephone) {
         super(nom, adresse, telephone);
         this.prenom = prenom;
